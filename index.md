@@ -1,9 +1,20 @@
-## Portfolio
+## Wiki do Laboratório de Processamento Diginal de Sinais
+
+Website semi-oficial do LPDS, contendo informações úteis e links para repositórios de trabalhos realizados.
 
 ---
 
-### Category Name 1 
+### Utilitários para pesquisa bibliográfica 
 
+Some interesting tools to perform a literature survey:
+
+- www.connectedpapers.com : This useful tool creates a graph showing all the papers which cite a given paper
+- https://www.citationtree.org : This website creates a tree with all the references of a given paper
+- https://www.semanticscholar.org : This one have a "highly influential citation" which may be helpful
+
+
+
+<!--
 [Project 1 Title](/sample_page)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
@@ -16,20 +27,11 @@
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-
-### Category Name 2
-
-- [Project 1 Title](http://example.com/)
-- [Project 2 Title](http://example.com/)
-- [Project 3 Title](http://example.com/)
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
-
----
-
+-->
 
 
 
 ---
+<!--
 <p style="font-size:11px">Page template forked from <a href="https://github.com/evanca/quick-portfolio">evanca</a></p>
-<!-- Remove above link if you don't want to attibute -->
+-->
