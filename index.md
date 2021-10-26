@@ -8,9 +8,9 @@ Website semi-oficial do LPDS, contendo informações úteis e links para reposit
 
 Some interesting tools to perform a literature survey:
 
-- www.connectedpapers.com : This useful tool creates a graph showing all the papers which cite a given paper
-- https://www.citationtree.org : This website creates a tree with all the references of a given paper
-- https://www.semanticscholar.org : This one have a "highly influential citation" which may be helpful
+- [connectedpapers](www.connectedpapers.com) : This useful tool creates a graph showing all the papers which cite a given paper
+- [citationtree](https://www.citationtree.org) : This website creates a tree with all the references of a given paper
+- [semanticscholar](https://www.semanticscholar.org) : This one have a "highly influential citation" which may be helpful
 
 
 
