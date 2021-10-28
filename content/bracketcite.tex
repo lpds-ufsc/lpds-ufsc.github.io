@@ -1,0 +1,100 @@
+
+\DeclareCiteCommand{\cite}[\mkbibbrackets]
+  {\usebibmacro{cite:init}%
+   \usebibmacro{prenote}}%
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite:comp}}%
+  {\iftoggle{comp}{}{\multicitedelim}}%
+  {\usebibmacro{cite:dump}%
+   \usebibmacro{postnote}}%
+
+\DeclareCiteCommand{\parencite}[\mkbibbrackets]%
+  {\usebibmacro{cite:init}%
+   \usebibmacro{prenote}}%
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite:comp}}%
+  {\iftoggle{comp}{}{\multicitedelim}}%
+  {\usebibmacro{cite:dump}%
+\usebibmacro{postnote}}%
+
+\makeatletter
+  \renewbibmacro*{textcite}{% >>>3
+    \iftoggle{comp}{%
+      \iffieldequals{namehash}{\cbx@lasthash}%
+        {\usebibmacro{cite:comp}}%
+        {\usebibmacro{cite:dump}%
+        \ifbool{cbx:parens}%
+          {\printtext{\bibclosebracket}\global\boolfalse{cbx:parens}}%
+          {}%
+        \iffirstcitekey%
+          {}%
+          {\textcitedelim}%
+        \usebibmacro{cite:init}%
+        \printtext[bibhyperref]{%
+          \ifnameundef{labelname}%
+            {\printfield[citetitle]{labeltitle}}%
+            {\printnames{labelname}}%
+        }
+        \setunit*{\printdelim{namelabeldelim}}%
+        \printtext{\bibopenbracket}\global\booltrue{cbx:parens}%
+        \ifnumequal{\value{citecount}}{1}%
+          {\usebibmacro{prenote}}%
+          {}%
+        \usebibmacro{cite:comp}%
+        \stepcounter{textcitecount}%
+        \savefield{namehash}{\cbx@lasthash}}%
+    }{%
+      \iffieldequals{namehash}{\cbx@lasthash}%
+            {\setunit{\multicitedelim}}%
+            {\printtext[bibhyperref]{%
+              \ifnameundef{labelname}%
+                {\printfield[citetitle]{labeltitle}}%
+                {\printnames{labelname}
+             }}%
+            \setunit*{\printdelim{namelabeldelim}}%
+            \printtext{\bibopenbracket}\global\booltrue{cbx:parens}%
+            \stepcounter{textcitecount}%
+            \savefield{namehash}{\cbx@lasthash}}%
+          \ifnumequal{\value{citecount}}{1}%
+            {\usebibmacro{prenote}}%
+            {}%
+          \usebibmacro{cite}%
+          \setunit{%
+            \ifbool{cbx:parens}%
+              {\bibclosebracket\global\boolfalse{cbx:parens}}%
+              {}%
+            \textcitedelim}%
+    }%
+}%
+
+  \renewbibmacro*{textcite:postnote}{%
+    \usebibmacro{postnote}%
+    \ifthenelse{\value{multicitecount}=\value{multicitetotal}}%
+      {\setunit{}%
+      \printtext{%
+        \ifbool{cbx:parens}%
+          {\bibclosebracket\global\boolfalse{cbx:parens}}%
+          {}}}%
+      {\setunit{%
+        \ifbool{cbx:parens}%
+          {\bibclosebracket\global\boolfalse{cbx:parens}}%
+          {}%
+        \textcitedelim}}}%
+
+  \DeclareCiteCommand{\cbx@textcite}%
+    {\iftoggle{comp}{\usebibmacro{cite:init}}{\usebibmacro{textcite:init}}}%
+    {\usebibmacro{citeindex}%
+    \usebibmacro{textcite}}%
+    {}%
+    {\iftoggle{comp}{%
+      \usebibmacro{cite:dump}%
+          \usebibmacro{postnote}%
+          \ifbool{cbx:parens}%
+            {\bibclosebracket\global\boolfalse{cbx:parens}}%
+            {}%
+    }{%
+      \usebibmacro{textcite:postnote}%
+}}%
+\makeatother
+
+\DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}}
