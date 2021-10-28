@@ -13,6 +13,13 @@ Some interesting tools to perform a literature survey:
 - [semanticscholar](https://www.semanticscholar.org) : This one have a "highly influential citation" which may be helpful
 
 
+---
+
+#### Template de tese da UFSC
+
+Arquivos do template de tese da UFSC com modificações para referências numéricas por ordem de citação no texto:
+
+- arquivo [``ufscthesisA4-alf.sty``](/content/ufscthesisA4-alf.sty) atualizado e arquivo [``bracketcite.tex``](/content/bracketcite.tex) a ser adicionado a pasta ``setup``.
 
 <!--
 [Project 1 Title](/sample_page)
