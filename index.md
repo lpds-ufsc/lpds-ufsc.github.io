@@ -1,4 +1,4 @@
-## Wiki do Laboratório de Processamento Diginal de Sinais
+## Wiki do Laboratório de Processamento Digital de Sinais
 
 Website semi-oficial do LPDS, contendo informações úteis e links para repositórios de trabalhos realizados.
 
